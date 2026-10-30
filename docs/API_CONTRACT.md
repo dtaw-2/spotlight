@@ -225,4 +225,5 @@ No response body is returned.
     "message": "Stylist not found."
   }
 }
+
 ```
