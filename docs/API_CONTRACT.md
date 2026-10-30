@@ -18,6 +18,7 @@ For Milestone 2, stylist data will be stored in memory or in a JSON file instead
   "specialties": ["Braids"],
   "bio": "Protective styling and braiding services."
 }
+```
 
 ## GET /api/stylists
 
@@ -43,12 +44,21 @@ No request body is required.
     }
   ]
 }
+```
+
+### Error Response
+
+**Status:** `500 Internal Server Error`
+
+```json
 {
   "error": {
     "code": "SERVER_ERROR",
     "message": "Unable to retrieve stylists."
   }
 }
+```
+
 ## GET /api/stylists/:id
 
 Returns one stylist based on the stylist's ID.
@@ -77,12 +87,21 @@ Example:
     "bio": "Protective styling and braiding services."
   }
 }
+```
+
+### Error Response
+
+**Status:** `404 Not Found`
+
+```json
 {
   "error": {
     "code": "NOT_FOUND",
     "message": "Stylist not found."
   }
 }
+```
+
 ## POST /api/stylists
 
 Creates a new stylist.
@@ -98,6 +117,13 @@ Creates a new stylist.
   "specialties": ["Braids", "Natural Hair"],
   "bio": "Braiding and natural hair services."
 }
+```
+
+### Success Response
+
+**Status:** `201 Created`
+
+```json
 {
   "data": {
     "id": 2,
@@ -107,12 +133,21 @@ Creates a new stylist.
     "bio": "Braiding and natural hair services."
   }
 }
+```
+
+### Error Response
+
+**Status:** `400 Bad Request`
+
+```json
 {
   "error": {
     "code": "INVALID_REQUEST",
     "message": "Name, location, and specialties are required."
   }
 }
+```
+
 ## PATCH /api/stylists/:id
 
 Updates one or more fields for an existing stylist.
@@ -128,18 +163,37 @@ Example:
   "location": "Cambridge, MA",
   "specialties": ["Braids", "Locs"]
 }
+```
+
+### Success Response
+
+**Status:** `200 OK`
+
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "Berry Hands",
+    "location": "Cambridge, MA",
+    "specialties": ["Braids", "Locs"],
+    "bio": "Protective styling and braiding services."
+  }
+}
+```
+
+### Error Response
+
+**Status:** `404 Not Found`
+
+```json
 {
   "error": {
     "code": "NOT_FOUND",
     "message": "Stylist not found."
   }
 }
-{
-  "error": {
-    "code": "NOT_FOUND",
-    "message": "Stylist not found."
-  }
-}
+```
+
 ## DELETE /api/stylists/:id
 
 Deletes an existing stylist.
@@ -171,3 +225,4 @@ No response body is returned.
     "message": "Stylist not found."
   }
 }
+```
