@@ -1,3 +1,6 @@
+//This is temporary stylist data for Milestone 2
+//This acts like the database until we add real persistance later
+
 const stylists = [
     {
         id: 1,
@@ -35,5 +38,5 @@ const stylists = [
         bio: "Barbering and haircut services."
     }
 ];
-
+//Make the stylist data available to the controller
 export default stylists;
