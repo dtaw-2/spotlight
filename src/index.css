@@ -331,19 +331,17 @@ section {
     margin: 5px 0 0;
     padding: 0;
     list-style: none;
-    background-color: white;
-    color: black;
-    border: 1px solid #262626;
-    border-radius: 0.5rem;
+    background: var(--navbar-color);
+    color: var(--white);
+    border: var(--border);
     z-index: 1000;
 }
 .search-results li {
     padding: 10px;
-    border-bottom: 1px solid #dddddd;
 }
 .search-results a {
     display: block;
-    color: black;
+    color: var(--white);
     text-decoration: none;
 }
 .search-results span {
@@ -352,5 +350,5 @@ section {
     margin-top: 3px;
 }
 .search-results li:hover {
-    background-color: #eeeeee;
+    background-color: var(--blue);
 }
