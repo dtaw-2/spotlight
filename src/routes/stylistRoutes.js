@@ -13,18 +13,18 @@ import {
 const router = Router();
 
 //All stylists
-router.get("/", getAllStylists);
+router.get("api/", getAllStylists);
 
 //Returns stylists by their ID
-router.get("/:id", getStylistById);
+router.get("api/:id", getStylistById);
 
 //Creates a new stylist
-router.post("/", createStylist);
+router.post("api/", createStylist);
 
 //Updates an existing stylist
-router.patch("/:id", updateStylist);
+router.patch("api/:id", updateStylist);
 
 //Deletes a stylist
-router.delete("/:id", deleteStylist);
+router.delete("api/:id", deleteStylist);
 
 export default router;
